@@ -1,0 +1,136 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tagline": "Cinema. Elegance. Istanbul.",
+    "sub": "Premium photography, film, and visual storytelling for weddings, brands, and beyond.",
+    "cta_primary": "Start Your Project",
+    "cta_secondary": "View Portfolio"
+  },
+  "about": {
+    "label": "About Us",
+    "heading": "We tell stories through light.",
+    "body": "Tavakoli Studio is a premium visual studio based in Istanbul, specializing in cinematic wedding films, brand photography, and creative visual content. We craft imagery that is timeless, elegant, and entirely yours.",
+    "cta": "Learn More"
+  },
+  "services": {
+    "label": "Services",
+    "heading": "What We Create",
+    "view_samples": "View Samples",
+    "items": {
+      "wedding": {
+        "title": "Wedding Photography & Film",
+        "description": "Cinematic wedding photography and films in Istanbul with an emotional, elegant and premium visual style."
+      },
+      "couple": {
+        "title": "Couple & Formality Shoots",
+        "description": "Elegant couple and formality shoots in iconic Istanbul locations."
+      },
+      "commercial": {
+        "title": "Commercial Photography",
+        "description": "Professional photography for products, restaurants, hotels, clinics, brands and businesses."
+      },
+      "brand-video": {
+        "title": "Brand Video Production",
+        "description": "Cinematic promotional videos, campaign videos and storytelling content for brands."
+      },
+      "social-media": {
+        "title": "Social Media Content",
+        "description": "Modern reels, short-form videos and visual content packages for Instagram and social platforms."
+      },
+      "drone": {
+        "title": "Drone & Aerial Cinematography",
+        "description": "Premium aerial footage for weddings, real estate, businesses and cinematic projects."
+      },
+      "ai-visuals": {
+        "title": "AI Visual Advertising",
+        "description": "Creative AI-powered advertising visuals and CGI-style campaign concepts for modern brands."
+      },
+      "website-design": {
+        "title": "Elegant Website Design",
+        "description": "Simple, elegant and modern websites for personal brands, studios, restaurants, clinics and creative professionals."
+      }
+    }
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "heading": "Our Work",
+    "sub": "Explore our work across every discipline.",
+    "all_categories": "All Categories",
+    "categories": {
+      "wedding": {
+        "title": "Wedding Photography & Film",
+        "description": "Emotional, cinematic wedding stories told through light and movement.",
+        "short": "Cinematic wedding photography and films in Istanbul."
+      },
+      "couple": {
+        "title": "Couple & Formality Shoots",
+        "description": "Elegant portraits in the most iconic corners of Istanbul.",
+        "short": "Elegant couple and formality shoots in Istanbul."
+      },
+      "commercial": {
+        "title": "Commercial Photography",
+        "description": "Visual content for products, restaurants, hotels, clinics and brands.",
+        "short": "Professional photography for brands and businesses."
+      },
+      "brand-video": {
+        "title": "Brand Video Production",
+        "description": "Cinematic promotional and campaign videos for brands that want to stand out.",
+        "short": "Cinematic brand films and campaign videos."
+      },
+      "social-media": {
+        "title": "Social Media Content",
+        "description": "Modern reels and visual packages designed for Instagram and beyond.",
+        "short": "Reels, short-form video and visual content packages."
+      },
+      "drone": {
+        "title": "Drone & Aerial",
+        "description": "Breathtaking aerial footage for weddings, real estate and film projects.",
+        "short": "Premium aerial footage and cinematic drone work."
+      },
+      "ai-visuals": {
+        "title": "AI Visual Advertising",
+        "description": "AI-powered advertising visuals and CGI-style concepts for modern brands.",
+        "short": "Creative AI visuals and CGI-style campaign content."
+      },
+      "website-design": {
+        "title": "Website Design",
+        "description": "Simple, elegant websites for studios, brands and creative professionals.",
+        "short": "Elegant websites for brands and creative professionals."
+      }
+    },
+    "cta": {
+      "heading": "Like this style?",
+      "sub": "Start your project with Tavakoli Studio.",
+      "whatsapp": "WhatsApp",
+      "instagram": "Instagram",
+      "back": "Back to Services"
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "heading": "Let's Create Together",
+    "sub": "Reach out via WhatsApp or Instagram to start your project.",
+    "email": "info@tavakolistudio.com",
+    "phone": "+90 552 830 98 73",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram",
+    "email_label": "Email Us"
+  },
+  "footer": {
+    "tagline": "Premium visual studio. Istanbul.",
+    "copyright": "© 2024 Tavakoli Studio. All rights reserved."
+  },
+  "common": {
+    "breadcrumb_home": "Home",
+    "breadcrumb_portfolio": "Portfolio",
+    "follow_instagram": "Follow on Instagram",
+    "start_project": "Start Your Project",
+    "view_portfolio": "View Portfolio"
+  }
+}

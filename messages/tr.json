@@ -1,0 +1,136 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "services": "Hizmetler",
+    "portfolio": "Portföy",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "tagline": "Sinema. Zarafet. İstanbul.",
+    "sub": "Düğünler, markalar ve daha fazlası için premium fotoğraf, film ve görsel hikaye anlatımı.",
+    "cta_primary": "Projenizi Başlatın",
+    "cta_secondary": "Portföyü Gör"
+  },
+  "about": {
+    "label": "Hakkımızda",
+    "heading": "Işık aracılığıyla hikayeler anlatıyoruz.",
+    "body": "Tavakoli Studio, İstanbul merkezli premium bir görsel stüdyodur. Sinematik düğün filmleri, marka fotoğrafçılığı ve yaratıcı görsel içerikler konusunda uzmanlaşmış bir stüdyoyuz.",
+    "cta": "Daha Fazla"
+  },
+  "services": {
+    "label": "Hizmetler",
+    "heading": "Neler Yaratıyoruz",
+    "view_samples": "Örnekleri Gör",
+    "items": {
+      "wedding": {
+        "title": "Düğün Fotoğrafçılığı & Film",
+        "description": "İstanbul'da duygusal, zarif ve premium görsel stiliyle sinematik düğün fotoğrafçılığı ve filmleri."
+      },
+      "couple": {
+        "title": "Çift & Nişan Çekimleri",
+        "description": "İstanbul'un ikonik mekanlarında zarif çift ve nişan çekimleri."
+      },
+      "commercial": {
+        "title": "Ticari Fotoğrafçılık",
+        "description": "Ürünler, restoranlar, oteller, klinikler, markalar ve işletmeler için profesyonel fotoğrafçılık."
+      },
+      "brand-video": {
+        "title": "Marka Video Prodüksiyonu",
+        "description": "Markalar için sinematik tanıtım videoları, kampanya videoları ve hikaye anlatımı içerikleri."
+      },
+      "social-media": {
+        "title": "Sosyal Medya İçeriği",
+        "description": "Instagram ve sosyal platformlar için modern reels, kısa videolar ve görsel içerik paketleri."
+      },
+      "drone": {
+        "title": "Drone & Hava Sinematografisi",
+        "description": "Düğünler, gayrimenkul, işletmeler ve sinematik projeler için premium hava görüntüleri."
+      },
+      "ai-visuals": {
+        "title": "Yapay Zeka Görsel Reklamcılık",
+        "description": "Modern markalar için yaratıcı yapay zeka destekli reklam görselleri ve CGI tarzı kampanya konseptleri."
+      },
+      "website-design": {
+        "title": "Zarif Web Sitesi Tasarımı",
+        "description": "Kişisel markalar, stüdyolar, restoranlar, klinikler ve yaratıcı profesyoneller için basit, zarif ve modern web siteleri."
+      }
+    }
+  },
+  "portfolio": {
+    "label": "Portföy",
+    "heading": "Çalışmalarımız",
+    "sub": "Her disiplindeki çalışmalarımızı keşfedin.",
+    "all_categories": "Tüm Kategoriler",
+    "categories": {
+      "wedding": {
+        "title": "Düğün Fotoğrafçılığı & Film",
+        "description": "Işık ve hareket aracılığıyla anlatılan duygusal, sinematik düğün hikayeleri.",
+        "short": "İstanbul'da sinematik düğün fotoğrafçılığı ve filmleri."
+      },
+      "couple": {
+        "title": "Çift & Nişan Çekimleri",
+        "description": "İstanbul'un en ikonik köşelerinde zarif portreler.",
+        "short": "İstanbul'da zarif çift ve nişan çekimleri."
+      },
+      "commercial": {
+        "title": "Ticari Fotoğrafçılık",
+        "description": "Ürünler, restoranlar, oteller, klinikler ve markalar için görsel içerik.",
+        "short": "Markalar ve işletmeler için profesyonel fotoğrafçılık."
+      },
+      "brand-video": {
+        "title": "Marka Video Prodüksiyonu",
+        "description": "Öne çıkmak isteyen markalar için sinematik tanıtım ve kampanya videoları.",
+        "short": "Sinematik marka filmleri ve kampanya videoları."
+      },
+      "social-media": {
+        "title": "Sosyal Medya İçeriği",
+        "description": "Instagram ve ötesi için tasarlanmış modern reels ve görsel paketler.",
+        "short": "Reels, kısa video ve görsel içerik paketleri."
+      },
+      "drone": {
+        "title": "Drone & Hava Görüntüleri",
+        "description": "Düğünler, gayrimenkul ve film projeleri için nefes kesen hava görüntüleri.",
+        "short": "Premium hava görüntüleri ve sinematik drone çalışmaları."
+      },
+      "ai-visuals": {
+        "title": "Yapay Zeka Görsel Reklamcılık",
+        "description": "Modern markalar için yapay zeka destekli reklam görselleri ve CGI tarzı konseptler.",
+        "short": "Yaratıcı yapay zeka görselleri ve CGI tarzı kampanya içerikleri."
+      },
+      "website-design": {
+        "title": "Web Sitesi Tasarımı",
+        "description": "Stüdyolar, markalar ve yaratıcı profesyoneller için basit, zarif web siteleri.",
+        "short": "Markalar ve yaratıcı profesyoneller için zarif web siteleri."
+      }
+    },
+    "cta": {
+      "heading": "Bu stili beğendiniz mi?",
+      "sub": "Tavakoli Studio ile projenizi başlatın.",
+      "whatsapp": "WhatsApp",
+      "instagram": "Instagram",
+      "back": "Hizmetlere Dön"
+    }
+  },
+  "contact": {
+    "label": "İletişim",
+    "heading": "Birlikte Yaratalım",
+    "sub": "Projenizi başlatmak için WhatsApp veya Instagram üzerinden bize ulaşın.",
+    "email": "info@tavakolistudio.com",
+    "phone": "+90 552 830 98 73",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram",
+    "email_label": "E-posta Gönder"
+  },
+  "footer": {
+    "tagline": "Premium görsel stüdyo. İstanbul.",
+    "copyright": "© 2024 Tavakoli Studio. Tüm hakları saklıdır."
+  },
+  "common": {
+    "breadcrumb_home": "Ana Sayfa",
+    "breadcrumb_portfolio": "Portföy",
+    "follow_instagram": "Instagram'da Takip Et",
+    "start_project": "Projenizi Başlatın",
+    "view_portfolio": "Portföyü Gör"
+  }
+}
