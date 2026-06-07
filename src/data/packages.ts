@@ -1,0 +1,170 @@
+import type { BudgetItem } from "@/types";
+
+export const budgetItems: BudgetItem[] = [
+  {
+    id: "photography",
+    label: "Photography Session",
+    priceRange: [300, 600],
+    selected: false,
+  },
+  {
+    id: "video",
+    label: "Cinematic Video",
+    priceRange: [400, 900],
+    selected: false,
+  },
+  {
+    id: "drone",
+    label: "Drone / Aerial Footage",
+    priceRange: [200, 450],
+    selected: false,
+  },
+  {
+    id: "reels",
+    label: "Social Media Reels",
+    priceRange: [150, 300],
+    selected: false,
+  },
+  {
+    id: "teaser",
+    label: "Same-Day Teaser Edit",
+    priceRange: [100, 200],
+    selected: false,
+  },
+  {
+    id: "ai-preview",
+    label: "AI Visual Preview",
+    priceRange: [50, 150],
+    selected: false,
+  },
+  {
+    id: "extra-location",
+    label: "Extra Location (+1)",
+    priceRange: [100, 200],
+    selected: false,
+  },
+  {
+    id: "extra-hour",
+    label: "Extra Hour",
+    priceRange: [80, 150],
+    selected: false,
+  },
+];
+
+export const projectTypeOptions = [
+  {
+    id: "wedding",
+    label: "Wedding",
+    label_fa: "عروسی",
+    label_tr: "Düğün",
+    description: "Full-day wedding photography & cinematic film",
+    icon: "💍",
+  },
+  {
+    id: "couple",
+    label: "Engagement / Couple",
+    label_fa: "نامزدی / زوج",
+    label_tr: "Çift / Nişan",
+    description: "Romantic couple & engagement sessions",
+    icon: "❤️",
+  },
+  {
+    id: "tourist",
+    label: "Tourist Photoshoot",
+    label_fa: "عکاسی گردشگری",
+    label_tr: "Turist Çekimi",
+    description: "Premium Istanbul photography experience",
+    icon: "📸",
+  },
+  {
+    id: "commercial",
+    label: "Commercial Brand Shoot",
+    label_fa: "عکاسی تجاری برند",
+    label_tr: "Ticari Marka Çekimi",
+    description: "Professional content for brands & businesses",
+    icon: "🏢",
+  },
+  {
+    id: "restaurant",
+    label: "Restaurant / Business",
+    label_fa: "رستوران / کسب‌وکار",
+    label_tr: "Restoran / İşletme",
+    description: "Food, interior and brand content",
+    icon: "🍽️",
+  },
+  {
+    id: "real-estate",
+    label: "Real Estate Video",
+    label_fa: "ویدیوی املاک",
+    label_tr: "Gayrimenkul Videosu",
+    description: "Aerial & cinematic property showcase",
+    icon: "🏡",
+  },
+  {
+    id: "ai-advertising",
+    label: "AI Visual Advertising",
+    label_fa: "تبلیغات تصویری هوش مصنوعی",
+    label_tr: "Yapay Zeka Görsel Reklamcılık",
+    description: "AI-powered campaign visuals & CGI content",
+    icon: "✨",
+  },
+];
+
+export const styleOptions = [
+  {
+    id: "cinematic",
+    label: "Cinematic",
+    label_fa: "سینماتیک",
+    label_tr: "Sinematik",
+    description: "Film-grade color grading, dramatic light",
+  },
+  {
+    id: "luxury",
+    label: "Luxury",
+    label_fa: "لاکچری",
+    label_tr: "Lüks",
+    description: "Rich tones, editorial elegance, premium finish",
+  },
+  {
+    id: "romantic",
+    label: "Romantic",
+    label_fa: "رمانتیک",
+    label_tr: "Romantik",
+    description: "Soft light, warm tones, emotional storytelling",
+  },
+  {
+    id: "editorial",
+    label: "Editorial",
+    label_fa: "ادیتوریال",
+    label_tr: "Editoryal",
+    description: "Magazine-ready, fashion-forward, bold",
+  },
+  {
+    id: "documentary",
+    label: "Documentary",
+    label_fa: "مستند",
+    label_tr: "Belgesel",
+    description: "Natural, candid, storytelling-first",
+  },
+  {
+    id: "minimal",
+    label: "Minimal",
+    label_fa: "مینیمال",
+    label_tr: "Minimal",
+    description: "Clean, simple, let the subject shine",
+  },
+  {
+    id: "social-media",
+    label: "Social Media Reels",
+    label_fa: "ریلز شبکه اجتماعی",
+    label_tr: "Sosyal Medya Reels",
+    description: "Vertical, engaging, platform-ready",
+  },
+  {
+    id: "drone",
+    label: "Drone / Aerial",
+    label_fa: "هوایی / درون",
+    label_tr: "Drone / Hava",
+    description: "Sweeping aerial views, cinematic scale",
+  },
+];
