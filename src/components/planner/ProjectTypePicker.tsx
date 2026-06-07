@@ -9,15 +9,15 @@ type Props = {
 };
 
 export default function ProjectTypePicker({ selected, onSelect }: Props) {
-  const { locale } = useLanguage();
+  const { locale, t } = useLanguage();
 
   return (
     <div>
-      <p className="text-xs tracking-[0.25em] uppercase text-gold mb-3">Step 1 of 5</p>
+      <p className="text-xs tracking-[0.25em] uppercase text-gold mb-3">{t("step.1of5")}</p>
       <h2 className="font-heading text-3xl md:text-4xl text-white mb-2">
-        What are we creating?
+        {t("p1.title")}
       </h2>
-      <p className="text-sm text-muted mb-10">Choose your project type to begin.</p>
+      <p className="text-sm text-muted mb-10">{t("p1.sub")}</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {projectTypeOptions.map((opt) => {
@@ -46,7 +46,7 @@ export default function ProjectTypePicker({ selected, onSelect }: Props) {
               <p className="text-xs text-muted leading-relaxed">{opt.description}</p>
               {isSelected && (
                 <span className="mt-3 inline-block text-[10px] tracking-widest uppercase text-gold">
-                  ✓ Selected
+                  {t("common.selected")}
                 </span>
               )}
             </button>

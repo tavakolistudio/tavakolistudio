@@ -16,17 +16,15 @@ const CROWD_COLOR: Record<string, string> = {
 };
 
 export default function LocationPicker({ selected, onSelect }: Props) {
-  const { locale } = useLanguage();
+  const { locale, t } = useLanguage();
 
   return (
     <div>
-      <p className="text-xs tracking-[0.25em] uppercase text-gold mb-3">Step 2 of 5</p>
+      <p className="text-xs tracking-[0.25em] uppercase text-gold mb-3">{t("step.2of5")}</p>
       <h2 className="font-heading text-3xl md:text-4xl text-white mb-2">
-        Choose your location
+        {t("p2.title")}
       </h2>
-      <p className="text-sm text-muted mb-10">
-        Each location has a different mood, light and character.
-      </p>
+      <p className="text-sm text-muted mb-10">{t("p2.sub")}</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {istanbulLocations.map((loc) => {
@@ -73,7 +71,7 @@ export default function LocationPicker({ selected, onSelect }: Props) {
                 <div className="flex items-center gap-4 text-[11px] text-muted mb-2">
                   <span>⏱ {loc.estimatedDuration}</span>
                   <span className={CROWD_COLOR[loc.crowdLevel]}>
-                    ● {loc.crowdLevel} crowd
+                    ● {t(`crowd.${loc.crowdLevel}`)}
                   </span>
                 </div>
                 <p className="text-[11px] text-muted">{loc.bestTime}</p>

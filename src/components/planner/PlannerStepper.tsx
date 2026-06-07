@@ -11,13 +11,14 @@ import Link from "next/link";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 import type { PlannerState, ProjectType, VisualStyle, Location } from "@/types";
 import { budgetItems as defaultItems } from "@/data/packages";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const STEPS = [
-  { num: 1, label: "Project" },
-  { num: 2, label: "Location" },
-  { num: 3, label: "Style" },
-  { num: 4, label: "Outfit" },
-  { num: 5, label: "Budget" },
+const STEP_KEYS = [
+  { num: 1, key: "step.project" },
+  { num: 2, key: "step.location" },
+  { num: 3, key: "step.style" },
+  { num: 4, key: "step.outfit" },
+  { num: 5, key: "step.budget" },
 ];
 
 const initialState: PlannerState = {
@@ -33,6 +34,7 @@ const initialState: PlannerState = {
 export default function PlannerStepper() {
   const [state, setState] = useState<PlannerState>(initialState);
   const [done, setDone] = useState(false);
+  const { t, dir } = useLanguage();
 
   const update = (patch: Partial<PlannerState>) =>
     setState((s) => ({ ...s, ...patch }));
@@ -60,7 +62,7 @@ export default function PlannerStepper() {
       >
         <div className="w-16 h-px bg-gold mx-auto" />
         <h2 className="font-heading text-4xl md:text-5xl text-white">
-          Your plan is ready.
+          {t("planner.done.title")}
         </h2>
         <p className="text-muted max-w-sm leading-relaxed text-sm">
           {state.location?.title} · {state.style} · ${state.totalBudget[0]}–$
@@ -73,20 +75,20 @@ export default function PlannerStepper() {
             rel="noopener noreferrer"
             className="px-8 py-4 bg-gold text-bg text-sm tracking-widest uppercase font-medium hover:bg-gold-light transition-colors duration-300"
           >
-            Book on WhatsApp
+            {t("planner.done.book_wa")}
           </a>
           <Link
             href="/booking"
             className="px-8 py-4 border border-white/20 text-white text-sm tracking-widest uppercase hover:border-gold/40 hover:text-gold transition-colors duration-300"
           >
-            Fill Booking Form
+            {t("planner.done.book_form")}
           </Link>
         </div>
         <button
           onClick={() => { setState(initialState); setDone(false); }}
           className="text-xs text-muted hover:text-white transition-colors tracking-widest uppercase mt-2"
         >
-          Start Over
+          {t("planner.done.restart")}
         </button>
       </motion.div>
     );
@@ -96,7 +98,7 @@ export default function PlannerStepper() {
     <div className="max-w-5xl mx-auto px-6 py-12">
       {/* Progress bar */}
       <div className="flex items-center gap-2 mb-14">
-        {STEPS.map((s, i) => (
+        {STEP_KEYS.map((s, i) => (
           <div key={s.num} className="flex items-center gap-2 flex-1">
             <div className="flex flex-col items-center gap-1">
               <div
@@ -113,10 +115,10 @@ export default function PlannerStepper() {
                   state.step >= s.num ? "text-gold" : "text-muted-2"
                 }`}
               >
-                {s.label}
+                {t(s.key)}
               </span>
             </div>
-            {i < STEPS.length - 1 && (
+            {i < STEP_KEYS.length - 1 && (
               <div
                 className={`flex-1 h-px transition-colors duration-300 ${
                   state.step > s.num ? "bg-gold/40" : "bg-white/5"
@@ -131,9 +133,9 @@ export default function PlannerStepper() {
       <AnimatePresence mode="wait">
         <motion.div
           key={state.step}
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 0, x: dir === "rtl" ? -20 : 20 }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
+          exit={{ opacity: 0, x: dir === "rtl" ? 20 : -20 }}
           transition={{ duration: 0.3 }}
         >
           {state.step === 1 && (
@@ -178,7 +180,7 @@ export default function PlannerStepper() {
           disabled={state.step === 1}
           className="text-xs tracking-widest uppercase text-muted hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
         >
-          ← Back
+          {t("planner.back")}
         </button>
 
         {state.step < 5 ? (
@@ -191,14 +193,14 @@ export default function PlannerStepper() {
             }
             className="px-8 py-3 bg-gold text-bg text-xs tracking-widest uppercase font-medium hover:bg-gold-light transition-colors duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
           >
-            Next →
+            {t("planner.next")}
           </button>
         ) : (
           <button
             onClick={() => setDone(true)}
             className="px-8 py-3 bg-gold text-bg text-xs tracking-widest uppercase font-medium hover:bg-gold-light transition-colors duration-300"
           >
-            See My Plan →
+            {t("planner.see_plan")}
           </button>
         )}
       </div>

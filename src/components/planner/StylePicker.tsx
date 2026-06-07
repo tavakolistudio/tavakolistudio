@@ -9,17 +9,15 @@ type Props = {
 };
 
 export default function StylePicker({ selected, onSelect }: Props) {
-  const { locale } = useLanguage();
+  const { locale, t } = useLanguage();
 
   return (
     <div>
-      <p className="text-xs tracking-[0.25em] uppercase text-gold mb-3">Step 3 of 5</p>
+      <p className="text-xs tracking-[0.25em] uppercase text-gold mb-3">{t("step.3of5")}</p>
       <h2 className="font-heading text-3xl md:text-4xl text-white mb-2">
-        What visual style speaks to you?
+        {t("p3.title")}
       </h2>
-      <p className="text-sm text-muted mb-10">
-        This guides the lighting, editing and direction of your shoot.
-      </p>
+      <p className="text-sm text-muted mb-10">{t("p3.sub")}</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {styleOptions.map((opt) => {
@@ -47,7 +45,7 @@ export default function StylePicker({ selected, onSelect }: Props) {
               <p className="text-xs text-muted leading-relaxed">{opt.description}</p>
               {isSelected && (
                 <span className="mt-4 inline-block text-[10px] tracking-widest uppercase text-gold">
-                  ✓ Selected
+                  {t("common.selected")}
                 </span>
               )}
             </button>

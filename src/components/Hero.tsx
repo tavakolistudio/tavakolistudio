@@ -85,6 +85,23 @@ export default function Hero({ lang }: Props) {
             {t("cta_secondary")}
           </Link>
         </motion.div>
+
+        {/* AI Studio entry point */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.8 }}
+          className="mt-8"
+        >
+          <Link
+            href="/planner"
+            className="inline-flex items-center gap-3 text-xs tracking-[0.25em] uppercase text-gold/70 hover:text-gold transition-colors duration-300 group"
+          >
+            <span className="w-8 h-px bg-gold/40 group-hover:bg-gold transition-colors duration-300" />
+            Plan Your Shoot with AI Studio
+            <span className="w-8 h-px bg-gold/40 group-hover:bg-gold transition-colors duration-300" />
+          </Link>
+        </motion.div>
       </div>
 
       {/* Scroll indicator */}

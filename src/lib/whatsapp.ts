@@ -1,4 +1,4 @@
-const WA_NUMBER = "905528309873";
+const WA_NUMBER = "905016967777";
 
 export function buildWhatsAppLink(params: {
   name: string;

@@ -2,7 +2,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Playfair_Display, Inter, Vazirmatn } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { LOCALES } from "@/lib/constants";
@@ -19,6 +19,13 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const vazirmatn = Vazirmatn({
+  subsets: ["arabic"],
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-vazirmatn",
   display: "swap",
 });
 
@@ -53,7 +60,7 @@ export default async function LangLayout({ children, params }: Props) {
   const dir = lang === "fa" ? "rtl" : "ltr";
 
   return (
-    <html lang={lang} dir={dir} className={`${playfair.variable} ${inter.variable}`}>
+    <html lang={lang} dir={dir} className={`${playfair.variable} ${inter.variable} ${vazirmatn.variable}`}>
       <body className="bg-bg text-white font-body">
         <NextIntlClientProvider messages={messages}>
           <Header lang={lang} />

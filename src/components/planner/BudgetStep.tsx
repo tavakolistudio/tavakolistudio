@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import type { BudgetItem } from "@/types";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type Props = {
   items: BudgetItem[];
@@ -18,6 +19,7 @@ function calcTotal(items: BudgetItem[]): [number, number] {
 
 export default function BudgetStep({ items, onChange }: Props) {
   const [localItems, setLocalItems] = useState<BudgetItem[]>(items);
+  const { t } = useLanguage();
 
   const toggle = (id: string) => {
     const updated = localItems.map((item) =>
@@ -32,13 +34,11 @@ export default function BudgetStep({ items, onChange }: Props) {
 
   return (
     <div>
-      <p className="text-xs tracking-[0.25em] uppercase text-gold mb-3">Step 5 of 5</p>
+      <p className="text-xs tracking-[0.25em] uppercase text-gold mb-3">{t("step.5of5")}</p>
       <h2 className="font-heading text-3xl md:text-4xl text-white mb-2">
-        Build your budget
+        {t("p5.title")}
       </h2>
-      <p className="text-sm text-muted mb-10">
-        Select the services you&apos;re interested in. We&apos;ll show you an estimated range.
-      </p>
+      <p className="text-sm text-muted mb-10">{t("p5.sub")}</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
         {localItems.map((item) => (
@@ -89,20 +89,19 @@ export default function BudgetStep({ items, onChange }: Props) {
         {hasSelection ? (
           <>
             <p className="text-xs tracking-widest uppercase text-gold mb-2">
-              Estimated Budget Range
+              {t("budget.range")}
             </p>
             <p className="font-heading text-4xl text-white">
               ${total[0].toLocaleString()}
               <span className="text-muted text-2xl"> – </span>${total[1].toLocaleString()}
             </p>
             <p className="text-xs text-muted mt-4 leading-relaxed">
-              Final price depends on date, location, production needs and availability.
-              This is an estimate to help you plan.
+              {t("budget.note")}
             </p>
           </>
         ) : (
           <p className="text-sm text-muted">
-            Select services above to see your estimated budget range.
+            {t("budget.empty")}
           </p>
         )}
       </div>

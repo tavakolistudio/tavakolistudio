@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Playfair_Display, Inter, Vazirmatn } from "next/font/google";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import AppHeader from "@/components/app/AppHeader";
 import "@/app/globals.css";
@@ -19,6 +19,13 @@ const inter = Inter({
   display: "swap",
 });
 
+const vazirmatn = Vazirmatn({
+  subsets: ["arabic"],
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-vazirmatn",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Tavakoli AI Studio — Plan Your Istanbul Photoshoot",
   description:
@@ -27,7 +34,7 @@ export const metadata: Metadata = {
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={`${playfair.variable} ${inter.variable}`}>
+    <html className={`${playfair.variable} ${inter.variable} ${vazirmatn.variable}`}>
       <body className="bg-bg text-white font-body antialiased">
         <LanguageProvider>
           <AppHeader />

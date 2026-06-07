@@ -27,16 +27,28 @@ export default function AppHeader() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-bg/90 backdrop-blur-md border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between gap-6">
-        {/* Logo */}
-        <Link href="/planner" className="flex items-center gap-3 shrink-0">
-          <span className="text-[10px] tracking-[0.25em] uppercase text-gold font-body">
-            Tavakoli
-          </span>
-          <span className="w-px h-4 bg-white/10" />
-          <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-body">
-            AI Studio
-          </span>
-        </Link>
+        {/* Back to main site + Logo */}
+        <div className="flex items-center gap-4 shrink-0">
+          <Link
+            href="/en"
+            className="hidden sm:flex items-center gap-1.5 text-[10px] tracking-widest uppercase text-muted-2 hover:text-gold transition-colors duration-300 group"
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:-translate-x-0.5 transition-transform duration-300">
+              <path d="M19 12H5M12 5l-7 7 7 7"/>
+            </svg>
+            Site
+          </Link>
+          <span className="hidden sm:block w-px h-4 bg-white/10" />
+          <Link href="/planner" className="flex items-center gap-3">
+            <span className="text-[10px] tracking-[0.25em] uppercase text-gold font-body">
+              Tavakoli
+            </span>
+            <span className="w-px h-4 bg-white/10" />
+            <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-body">
+              AI Studio
+            </span>
+          </Link>
+        </div>
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-6">
@@ -121,6 +133,18 @@ export default function AppHeader() {
             >
               {t("nav.booking")}
             </Link>
+            <div className="pt-2 border-t border-white/5">
+              <Link
+                href="/en"
+                onClick={() => setOpen(false)}
+                className="flex items-center gap-2 text-xs tracking-widest uppercase text-muted-2 hover:text-gold transition-colors"
+              >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M19 12H5M12 5l-7 7 7 7"/>
+                </svg>
+                Back to Main Site
+              </Link>
+            </div>
           </nav>
         </div>
       )}

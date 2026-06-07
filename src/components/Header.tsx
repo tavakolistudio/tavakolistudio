@@ -100,6 +100,14 @@ export default function Header({ lang }: Props) {
           </a>
           <LanguageSwitcher lang={lang} />
 
+          {/* AI Studio CTA */}
+          <Link
+            href="/planner"
+            className="hidden md:inline-flex items-center gap-2 px-5 py-2 border border-gold/60 text-gold text-[11px] tracking-widest uppercase hover:bg-gold hover:text-bg transition-all duration-300"
+          >
+            AI Studio
+          </Link>
+
           {/* Mobile menu toggle */}
           <button
             className="md:hidden text-muted hover:text-white transition-colors"
@@ -125,6 +133,13 @@ export default function Header({ lang }: Props) {
                 {l.label}
               </Link>
             ))}
+            <Link
+              href="/planner"
+              onClick={() => setOpen(false)}
+              className="mt-2 px-5 py-3 border border-gold/60 text-gold text-[11px] tracking-widest uppercase text-center hover:bg-gold hover:text-bg transition-all duration-300"
+            >
+              ✦ AI Studio — Plan Your Shoot
+            </Link>
           </nav>
         </div>
       )}

@@ -26,9 +26,12 @@ export default function PortfolioOverview({ lang }: Props) {
                 href={`/${lang}/portfolio/${cat}`}
                 className="group block aspect-[3/4] relative overflow-hidden bg-surface"
               >
-                {/* Placeholder background */}
-                <div className="absolute inset-0 bg-surface-2 group-hover:bg-surface transition-colors duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                {/* Background image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  style={{ backgroundImage: `url('/images/portfolio/${cat}/cover.jpg')`, backgroundColor: "#1A1A1A" }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10 group-hover:from-black/70 transition-all duration-500" />
 
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <p className="text-xs tracking-widest uppercase text-gold mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
