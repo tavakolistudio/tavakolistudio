@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
@@ -10,15 +11,16 @@ export default function Hero({ lang }: Props) {
   const t = useTranslations("hero");
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-bg z-10" />
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/images/hero-bg.jpg')",
-          backgroundColor: "#0D0D0D",
-        }}
+      <Image
+        src="/images/hero-bg.jpg"
+        alt="Tavakoli Studio — cinematic photography backdrop"
+        fill
+        priority
+        className="object-cover object-center"
+        sizes="100vw"
       />
 
       {/* Subtle grain overlay */}
@@ -110,9 +112,7 @@ export default function Hero({ lang }: Props) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 2 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
+        aria-hidden="true"
       >
-        <div className="w-px h-12 bg-gradient-to-b from-transparent to-white/20" />
-      </motion.div>
-    </section>
-  );
-}
+        <motion.div
+          animate={{ scaleY: [0.3, 1,

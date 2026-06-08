@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
@@ -37,7 +38,7 @@ export default function About({ lang }: Props) {
             </Link>
           </motion.div>
 
-          {/* Right: image placeholder */}
+          {/* Right: image */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -45,14 +46,12 @@ export default function About({ lang }: Props) {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="aspect-[4/5] bg-surface-2 relative overflow-hidden"
           >
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: "url('/images/about-placeholder.jpg')" }}
+            <Image
+              src="/images/about-placeholder.jpg"
+              alt="Tavakoli Studio — behind the lens"
+              fill
+              loading="lazy"
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-}
+            <div className="ab

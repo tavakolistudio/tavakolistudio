@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { INSTAGRAM_URL } from "@/lib/constants";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -110,9 +111,11 @@ export default function Header({ lang }: Props) {
 
           {/* Mobile menu toggle */}
           <button
-            className="md:hidden text-muted hover:text-white transition-colors"
+            className="md:hidden text-muted hover:text-white transition-colors p-1"
             onClick={() => setOpen(!open)}
-            aria-label="Menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
           >
             {open ? <CloseIcon /> : <MenuIcon />}
           </button>
@@ -120,29 +123,22 @@ export default function Header({ lang }: Props) {
       </div>
 
       {/* Mobile menu */}
-      {open && (
-        <div className="md:hidden bg-bg/98 backdrop-blur-sm border-t border-white/5">
-          <nav className="flex flex-col px-6 py-8 gap-6">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="text-sm tracking-wider text-muted hover:text-white transition-colors duration-300 uppercase"
-              >
-                {l.label}
-              </Link>
-            ))}
-            <Link
-              href="/planner"
-              onClick={() => setOpen(false)}
-              className="mt-2 px-5 py-3 border border-gold/60 text-gold text-[11px] tracking-widest uppercase text-center hover:bg-gold hover:text-bg transition-all duration-300"
-            >
-              ✦ AI Studio — Plan Your Shoot
-            </Link>
-          </nav>
-        </div>
-      )}
-    </header>
-  );
-}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            id="mobile-nav"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="md:hidden bg-bg/98 backdrop-blur-sm border-t border-white/5 overflow-hidden"
+          >
+            <nav className="flex flex-col px-6 py-8 gap-6">
+              {links.map((l, i) => (
+                <motion.div
+                  key={l.href}
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.2, delay: i * 0.04 }}
+                >
+                  <Li

@@ -23,9 +23,9 @@ export default function ServiceCard({ lang, category, index }: Props) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.08 }}
-      className="group border border-white/5 bg-surface/30 p-8 hover:border-gold/20 transition-colors duration-500 flex flex-col"
+      className="group border border-white/5 bg-surface/30 p-8 hover:border-gold/20 hover:bg-surface/50 transition-all duration-500 flex flex-col"
     >
-      <p className="text-xs tracking-widest text-muted-2 uppercase mb-4">
+      <p className="text-xs tracking-widest text-muted-2 uppercase mb-4" aria-hidden="true">
         0{index + 1}
       </p>
       <h3 className="font-heading text-xl text-white mb-4 group-hover:text-gold transition-colors duration-300">
@@ -36,10 +36,4 @@ export default function ServiceCard({ lang, category, index }: Props) {
       </p>
       <Link
         href={`/${lang}/portfolio/${category}`}
-        className="text-xs tracking-widest uppercase text-gold hover:text-gold-light transition-colors duration-300 border-b border-gold/20 pb-1 self-start"
-      >
-        {t("view_samples")} →
-      </Link>
-    </motion.div>
-  );
-}
+        className="text-xs tracking-widest uppercase text-gold hover:text-gold-light transition-colors duration-300 border-b border-gold/20 hover:border-gold/50 pb-1 self-start focus-visible:border-go
