@@ -12,7 +12,6 @@ type Props = {
 
 export default function ServiceCard({ lang, category, index }: Props) {
   const t = useTranslations("services");
-  const portfolioT = useTranslations("portfolio");
 
   const title = t(`items.${category}.title` as any);
   const description = t(`items.${category}.description` as any);
@@ -36,4 +35,11 @@ export default function ServiceCard({ lang, category, index }: Props) {
       </p>
       <Link
         href={`/${lang}/portfolio/${category}`}
-        className="text-xs tracking-widest uppercase text-gold hover:text-gold-light transition-colors duration-300 border-b border-gold/20 hover:border-gold/50 pb-1 self-start focus-visible:border-go
+        className="text-xs tracking-widest uppercase text-gold hover:text-gold-light transition-colors duration-300 border-b border-gold/20 hover:border-gold/50 pb-1 self-start"
+        aria-label={`View ${title} portfolio samples`}
+      >
+        {t("view_samples")} →
+      </Link>
+    </motion.div>
+  );
+}

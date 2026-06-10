@@ -27,7 +27,6 @@ const CloseIcon = () => (
 export default function GalleryGrid({ items, category }: Props) {
   const [selected, setSelected] = useState<GalleryItem | null>(null);
 
-  // Close lightbox on Escape key
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === "Escape") setSelected(null);
   }, []);
@@ -90,4 +89,28 @@ export default function GalleryGrid({ items, category }: Props) {
               initial={{ scale: 0.95 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.95 }}
-              transition={{
+              transition={{ duration: 0.3 }}
+              className="relative max-w-5xl max-h-[85vh] w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={selected.src}
+                alt={selected.alt}
+                width={selected.width || 1200}
+                height={selected.height || 800}
+                className="object-contain max-h-[85vh] w-full"
+              />
+            </motion.div>
+            <button
+              onClick={() => setSelected(null)}
+              className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors"
+              aria-label="Close lightbox"
+            >
+              <CloseIcon />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}

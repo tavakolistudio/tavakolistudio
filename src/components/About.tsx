@@ -54,4 +54,10 @@ export default function About({ lang }: Props) {
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <div className="ab
+            <div className="absolute inset-0 bg-black/10" />
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
