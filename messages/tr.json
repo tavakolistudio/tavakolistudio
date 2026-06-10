@@ -21,6 +21,7 @@
   "services": {
     "label": "Hizmetler",
     "heading": "Neler Yaratıyoruz",
+    "hero_description": "Düğün filmlerinden yapay zeka görsellerine — hareket ettiren, ilham veren ve kalıcı hikayeler yaratıyoruz.",
     "view_samples": "Örnekleri Gör",
     "items": {
       "wedding": {
