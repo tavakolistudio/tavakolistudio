@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { AntiGravityCanvas } from "@/components/ui/particle-effect-for-hero";
 
 type Props = { lang: string };
 
@@ -11,20 +11,15 @@ export default function Hero({ lang }: Props) {
   const t = useTranslations("hero");
 
   return (
-    <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-bg z-10" />
-      <Image
-        src="/images/hero-bg.jpg"
-        alt="Tavakoli Studio — cinematic photography backdrop"
-        fill
-        priority
-        className="object-cover object-center"
-        sizes="100vw"
-      />
+    <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-black cursor-crosshair">
+      {/* Particle canvas background */}
+      <AntiGravityCanvas />
+
+      {/* Gradient overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-bg/80 z-10 pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
+      <div className="relative z-20 text-center px-6 max-w-4xl mx-auto pointer-events-none">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -65,7 +60,7 @@ export default function Hero({ lang }: Props) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center pointer-events-auto"
         >
           <Link
             href={`/${lang}/contact`}
@@ -85,7 +80,7 @@ export default function Hero({ lang }: Props) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.8 }}
-          className="mt-8"
+          className="mt-8 pointer-events-auto"
         >
           <Link
             href="/planner"
@@ -103,7 +98,7 @@ export default function Hero({ lang }: Props) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 pointer-events-none"
         aria-hidden="true"
       >
         <span className="text-[10px] tracking-widest uppercase text-muted">Scroll</span>
