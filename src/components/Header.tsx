@@ -10,16 +10,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 type Props = { lang: string };
 
 const InstagramIcon = () => (
-  <svg
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
     <circle cx="12" cy="12" r="4" />
     <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
@@ -101,7 +92,6 @@ export default function Header({ lang }: Props) {
           </a>
           <LanguageSwitcher lang={lang} />
 
-          {/* AI Studio CTA */}
           <Link
             href="/planner"
             className="hidden md:inline-flex items-center gap-2 px-5 py-2 border border-gold/60 text-gold text-[11px] tracking-widest uppercase hover:bg-gold hover:text-bg transition-all duration-300"
@@ -109,7 +99,6 @@ export default function Header({ lang }: Props) {
             AI Studio
           </Link>
 
-          {/* Mobile menu toggle */}
           <button
             className="md:hidden text-muted hover:text-white transition-colors p-1"
             onClick={() => setOpen(!open)}
@@ -141,4 +130,26 @@ export default function Header({ lang }: Props) {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.2, delay: i * 0.04 }}
                 >
-                  <Li
+                  <Link
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    className="text-sm tracking-wider text-muted hover:text-white transition-colors duration-300 uppercase"
+                  >
+                    {l.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <Link
+                href="/planner"
+                onClick={() => setOpen(false)}
+                className="mt-2 inline-flex items-center gap-2 px-5 py-2 border border-gold/60 text-gold text-[11px] tracking-widest uppercase hover:bg-gold hover:text-bg transition-all duration-300 self-start"
+              >
+                AI Studio
+              </Link>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+}

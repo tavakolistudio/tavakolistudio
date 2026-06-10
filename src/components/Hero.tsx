@@ -23,13 +23,6 @@ export default function Hero({ lang }: Props) {
         sizes="100vw"
       />
 
-      {/* Subtle grain overlay */}
-      <div className="absolute inset-0 opacity-[0.03] z-10"
-        style={{
-          backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E\")",
-        }}
-      />
-
       {/* Content */}
       <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
         <motion.p
@@ -88,7 +81,6 @@ export default function Hero({ lang }: Props) {
           </Link>
         </motion.div>
 
-        {/* AI Studio entry point */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -114,5 +106,13 @@ export default function Hero({ lang }: Props) {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
         aria-hidden="true"
       >
+        <span className="text-[10px] tracking-widest uppercase text-muted">Scroll</span>
         <motion.div
-          animate={{ scaleY: [0.3, 1,
+          animate={{ scaleY: [0.3, 1, 0.3], opacity: [0.4, 1, 0.4] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          className="w-px h-8 bg-gold/40 origin-top"
+        />
+      </motion.div>
+    </section>
+  );
+}
