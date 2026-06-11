@@ -13,13 +13,32 @@ export default function About({ lang }: Props) {
   return (
     <section className="py-32 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-16 items-center">
-          {/* Left: text */}
+        <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-16 items-center">
+          {/* Left: image */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="aspect-[4/5] bg-surface-2 relative overflow-hidden"
+          >
+            <Image
+              src="/images/about-placeholder.png"
+              alt="Tavakoli Studio — behind the lens"
+              fill
+              quality={90}
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 360px"
+            />
+            <div className="absolute inset-0 bg-black/10" />
+          </motion.div>
+
+          {/* Right: text */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <p className="text-xs tracking-[0.3em] uppercase text-gold mb-6">
               {t("label")}
@@ -36,25 +55,6 @@ export default function About({ lang }: Props) {
             >
               {t("cta")} →
             </Link>
-          </motion.div>
-
-          {/* Right: image */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="aspect-[4/5] bg-surface-2 relative overflow-hidden"
-          >
-            <Image
-              src="/images/about-placeholder.png"
-              alt="Tavakoli Studio — behind the lens"
-              fill
-              quality={90}
-              className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 360px"
-            />
-            <div className="absolute inset-0 bg-black/10" />
           </motion.div>
         </div>
       </div>
