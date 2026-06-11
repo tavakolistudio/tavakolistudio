@@ -13,7 +13,7 @@ export default function About({ lang }: Props) {
   return (
     <section className="py-32 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-16 items-center">
           {/* Left: text */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -50,9 +50,9 @@ export default function About({ lang }: Props) {
               src="/images/about-placeholder.jpg"
               alt="Tavakoli Studio — behind the lens"
               fill
-              loading="lazy"
+              quality={90}
               className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              sizes="(max-width: 1024px) 100vw, 360px"
             />
             <div className="absolute inset-0 bg-black/10" />
           </motion.div>
