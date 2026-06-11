@@ -47,7 +47,7 @@ export default function About({ lang }: Props) {
             className="aspect-[4/5] bg-surface-2 relative overflow-hidden"
           >
             <Image
-              src="/images/about-placeholder.jpg"
+              src="/images/about-placeholder.png"
               alt="Tavakoli Studio — behind the lens"
               fill
               quality={90}
