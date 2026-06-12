@@ -68,6 +68,9 @@ export default function GalleryGrid({ items, category }: Props) {
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
+            <span className="absolute bottom-3 right-3 text-white/50 text-[10px] tracking-[0.2em] uppercase font-light select-none pointer-events-none">
+              BY: TAVAKOLISTUDIO
+            </span>
           </motion.button>
         ))}
       </div>
@@ -101,6 +104,9 @@ export default function GalleryGrid({ items, category }: Props) {
                 height={selected.height || 800}
                 className="object-contain max-h-[85vh] w-full"
               />
+              <span className="absolute bottom-4 right-4 text-white/40 text-xs tracking-[0.25em] uppercase font-light select-none pointer-events-none">
+                BY: TAVAKOLISTUDIO
+              </span>
             </motion.div>
             <button
               onClick={() => setSelected(null)}
