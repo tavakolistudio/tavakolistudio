@@ -1,7 +1,9 @@
 import { setRequestLocale } from "next-intl/server";
-import PortfolioCategoryPage from "@/components/PortfolioCategoryPage";
+import WebsiteDesignPortfolio from "@/components/WebsiteDesignPortfolio";
+
 type Props = { params: { lang: string } };
+
 export default function Page({ params: { lang } }: Props) {
   setRequestLocale(lang);
-  return <PortfolioCategoryPage lang={lang} category="website-design" />;
+  return <WebsiteDesignPortfolio lang={lang} />;
 }
