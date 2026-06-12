@@ -7,9 +7,16 @@ import GalleryGrid from "./GalleryGrid";
 import { INSTAGRAM_URL, WHATSAPP_URL, GALLERY_PLACEHOLDER_COUNT } from "@/lib/constants";
 import type { PortfolioCategory } from "@/lib/constants";
 
+type GalleryItem = {
+  id: number;
+  src: string;
+  alt: string;
+};
+
 type Props = {
   lang: string;
   category: PortfolioCategory;
+  items?: GalleryItem[];
 };
 
 function buildPlaceholders(category: string) {
@@ -20,9 +27,9 @@ function buildPlaceholders(category: string) {
   }));
 }
 
-export default function PortfolioCategoryPage({ lang, category }: Props) {
+export default function PortfolioCategoryPage({ lang, category, items: customItems }: Props) {
   const t = useTranslations("portfolio");
-  const items = buildPlaceholders(category);
+  const items = customItems ?? buildPlaceholders(category);
 
   return (
     <div className="pt-20">
