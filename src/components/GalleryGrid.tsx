@@ -24,12 +24,35 @@ const CloseIcon = () => (
   </svg>
 );
 
+const ChevronLeft = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+    <polyline points="15 18 9 12 15 6" />
+  </svg>
+);
+
+const ChevronRight = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+    <polyline points="9 18 15 12 9 6" />
+  </svg>
+);
+
 export default function GalleryGrid({ items, category }: Props) {
-  const [selected, setSelected] = useState<GalleryItem | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const selected = selectedIndex !== null ? items[selectedIndex] : null;
+
+  const prev = useCallback(() => {
+    setSelectedIndex((i) => (i !== null ? (i - 1 + items.length) % items.length : null));
+  }, [items.length]);
+
+  const next = useCallback(() => {
+    setSelectedIndex((i) => (i !== null ? (i + 1) % items.length : null));
+  }, [items.length]);
 
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === "Escape") setSelected(null);
-  }, []);
+    if (e.key === "Escape") setSelectedIndex(null);
+    if (e.key === "ArrowLeft") prev();
+    if (e.key === "ArrowRight") next();
+  }, [prev, next]);
 
   useEffect(() => {
     if (selected) {
@@ -54,7 +77,7 @@ export default function GalleryGrid({ items, category }: Props) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.07 }}
-            onClick={() => setSelected(item)}
+            onClick={() => setSelectedIndex(i)}
             aria-label={`View photo: ${item.alt}`}
             className="aspect-[4/3] relative overflow-hidden bg-surface group cursor-pointer"
           >
@@ -77,7 +100,7 @@ export default function GalleryGrid({ items, category }: Props) {
 
       {/* Lightbox */}
       <AnimatePresence>
-        {selected && (
+        {selected && selectedIndex !== null && (
           <motion.div
             role="dialog"
             aria-modal="true"
@@ -87,13 +110,23 @@ export default function GalleryGrid({ items, category }: Props) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-6"
-            onClick={() => setSelected(null)}
+            onClick={() => setSelectedIndex(null)}
           >
+            {/* Prev */}
+            <button
+              onClick={(e) => { e.stopPropagation(); prev(); }}
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white transition-colors p-2 z-10"
+              aria-label="Previous photo"
+            >
+              <ChevronLeft />
+            </button>
+
             <motion.div
-              initial={{ scale: 0.95 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.95 }}
-              transition={{ duration: 0.3 }}
+              key={selectedIndex}
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -30 }}
+              transition={{ duration: 0.25 }}
               className="relative max-w-5xl max-h-[85vh] w-full"
               onClick={(e) => e.stopPropagation()}
             >
@@ -102,14 +135,28 @@ export default function GalleryGrid({ items, category }: Props) {
                 alt={selected.alt}
                 width={selected.width || 1200}
                 height={selected.height || 800}
+                unoptimized
                 className="object-contain max-h-[85vh] w-full"
               />
               <span className="absolute bottom-4 right-4 text-white/40 text-xs tracking-[0.25em] uppercase font-light select-none pointer-events-none">
                 BY: TAVAKOLISTUDIO
               </span>
+              <span className="absolute bottom-4 left-4 text-white/30 text-xs font-light select-none pointer-events-none">
+                {selectedIndex + 1} / {items.length}
+              </span>
             </motion.div>
+
+            {/* Next */}
             <button
-              onClick={() => setSelected(null)}
+              onClick={(e) => { e.stopPropagation(); next(); }}
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white transition-colors p-2 z-10"
+              aria-label="Next photo"
+            >
+              <ChevronRight />
+            </button>
+
+            <button
+              onClick={() => setSelectedIndex(null)}
               className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors"
               aria-label="Close lightbox"
             >
