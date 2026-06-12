@@ -36,6 +36,10 @@
         "title": "Commercial Photography",
         "description": "Professional photography for products, restaurants, hotels, clinics, brands and businesses."
       },
+      "industrial": {
+        "title": "Industrial Photography",
+        "description": "Professional photography for factories, industrial facilities, machinery and production environments."
+      },
       "brand-video": {
         "title": "Brand Video Production",
         "description": "Cinematic promotional videos, campaign videos and storytelling content for brands."
@@ -78,6 +82,11 @@
         "title": "Commercial Photography",
         "description": "Visual content for products, restaurants, hotels, clinics and brands.",
         "short": "Professional photography for brands and businesses."
+      },
+      "industrial": {
+        "title": "Industrial Photography",
+        "description": "Professional photography for factories, industrial facilities, machinery and production environments.",
+        "short": "Photography for industrial facilities and production environments."
       },
       "brand-video": {
         "title": "Brand Video Production",

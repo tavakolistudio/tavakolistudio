@@ -11,6 +11,7 @@ export const PORTFOLIO_CATEGORIES = [
   "wedding",
   "couple",
   "commercial",
+  "industrial",
   "brand-video",
   "social-media",
   "drone",

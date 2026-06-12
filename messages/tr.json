@@ -36,6 +36,10 @@
         "title": "Ticari Fotoğrafçılık",
         "description": "Ürünler, restoranlar, oteller, klinikler, markalar ve işletmeler için profesyonel fotoğrafçılık."
       },
+      "industrial": {
+        "title": "Endüstriyel Fotoğrafçılık",
+        "description": "Fabrikalar, endüstriyel tesisler, makineler ve üretim ortamları için profesyonel fotoğrafçılık."
+      },
       "brand-video": {
         "title": "Marka Video Prodüksiyonu",
         "description": "Markalar için sinematik tanıtım videoları, kampanya videoları ve hikaye anlatımı içerikleri."
@@ -78,6 +82,11 @@
         "title": "Ticari Fotoğrafçılık",
         "description": "Ürünler, restoranlar, oteller, klinikler ve markalar için görsel içerik.",
         "short": "Markalar ve işletmeler için profesyonel fotoğrafçılık."
+      },
+      "industrial": {
+        "title": "Endüstriyel Fotoğrafçılık",
+        "description": "Fabrikalar, endüstriyel tesisler, makineler ve üretim ortamları için profesyonel fotoğrafçılık.",
+        "short": "Endüstriyel tesisler ve üretim ortamları için fotoğrafçılık."
       },
       "brand-video": {
         "title": "Marka Video Prodüksiyonu",
