@@ -51,6 +51,13 @@ const websites: Website[] = [
     url: "https://nuriopet.vercel.app/",
     cover: "/images/portfolio/website-design/nuriopet.jpg",
   },
+  {
+    id: 6,
+    title: "Dr. Bahrian",
+    description: "Clinical Psychologist Website",
+    url: "https://drbahrian.vercel.app/fa",
+    cover: "/images/portfolio/website-design/drbahrian.jpg",
+  },
 ];
 
 const ExternalLinkIcon = () => (
